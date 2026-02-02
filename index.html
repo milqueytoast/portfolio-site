@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="layout">
-        <!--Sidebar Nav-->
-        <div class="sidebar">
-            <h1>Sara Atefi</h1>
-            <p>Work</p>
-            <p>Characters</p>
-            <p>Props</p>
-            <p>Environments</p>
-            <p>About</p>
-        </div>
-        <div clas="content">
-            <!--Main content.-->
-            <h2>mainwork</h2>
-            <div class="work-grid">
-                <img src="images/placeholder.png">
-                <img src="images/placeholder.png">
-                <img src="images/placeholder.png">
-                <img src="images/placeholder.png">
-                <img src="images/placeholder.png">
-            </div>
-        </div>
-    </div>
+
+    <!--Desktop Nav-->
+    <aside class="sidebar">
+        <h1 class="logo">Sara Atefi</h1>
+        <nav class="nav-desktop">
+            <a>Work</a>
+            <a>Illustration</a>
+            <a>3D</a>
+            <a>About</a>
+        </nav>
+        <div class="socials"></div>
+    </aside>
+
+    <!--Mobile Nav-->
+    <header class="mobile">
+        <div class="brand">Sara Atefi</div>
+        <button id="hamburger">
+        </button>
+        <nav class="nav-mobile hidden">
+            <a>About</a>
+            <a>Work</a>
+            <a>Contact</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section id="work" class="artlayout">
+            <img src="images/SaraAtefiMini8.jpg">
+            <img src="images/SaraAtefiEnvironmentalPortrait.jpg">
+            <img src="images/SaraAtefiMini4.jpg">
+            <img src="images/savethewhales.jpg">
+        </section>
+        <section id="contact"></section>
+    </main>
+
+
 </body>
+
 </html>
