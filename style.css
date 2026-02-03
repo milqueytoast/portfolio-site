@@ -6,8 +6,12 @@
   --accent-two: lightgreen;
   --main-text: white;
   --secondary-text: grey;
-
 }
+
+body {
+  margin: 0;
+}
+
 .sidebar {
   position: fixed;
   left: 0;
@@ -41,7 +45,7 @@ section {
 /* Hide sidebar on phone -- got help from ChatGPT, had to fix a lot by hand*/
 @media (max-width: 800px) {
   body {
-    margin: 0;
+    margin: 10;
   }
 
   .sidebar {
@@ -56,36 +60,49 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    Height: 60px;
     background: #767676;
     position: sticky;
+    top: 0;
     z-index: 10;
   }
 
   .nav-mobile {
+    display: none;
     flex-direction: column;
-    background: #ababab;
+    background: #b48383;
+    position:absolute;
+    width: 100vw;
+    top: 60px;
   }
 
   .nav-mobile a {
-    padding: 1rem;
+    padding: 1rem 1rem;
     text-decoration: none;
     color: #000000;
+    display: block;
+    cursor: pointer;
   }
 
-  .hidden {
-    display: none;
+  .nav-mobile a:hover {
+    background-color: yellow;
   }
+
 }
 
+/* Dropdown */
+.mobile button {
+  background-color: aqua;
+  cursor: pointer;
+}
 
 /* Gallery layout */ 
-.artlayout {
+#artlayout {
     column-count: 3;
     column-gap: 20px;
 }
 
-.artlayout img {
+#artlayout img {
     width: 100%;
     object-fit: cover;
     margin-top: 20px;
@@ -93,8 +110,41 @@ section {
     cursor: pointer;
 }
 
+.work img:hover {
+  filter: brightness(50%);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.9);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.popup img {
+  position: relative;
+  object-fit: contain;
+  width: 900px;
+  height: auto;
+  max-height: 100vh;
+}
+
 @media (max-width: 800px) {
-    .artlayout {
+    #artlayout {
       column-count: 2;
     }
 }
