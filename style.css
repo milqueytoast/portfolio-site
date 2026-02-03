@@ -1,8 +1,18 @@
+
+/* Constant */
+:root {
+  --background-color: black;
+  --accent: green;
+  --accent-two: lightgreen;
+  --main-text: white;
+  --secondary-text: grey;
+
+}
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
-  width: 250px;
+  width: 25vh;
   height: 100vh;
   padding: 2rem;
   background: #848484;
@@ -16,21 +26,24 @@
   margin: 1rem 0;
   text-decoration: none;
   color: #fff;
-  font-weight: bold;
 }
 
 .content {
-  margin-left: 300px;
+  margin-left: 30vh;
   padding: 1rem;
 }
 
 section {
   min-height: 100vh;
-  padding: 4rem 2rem;
+  padding: 0 1rem;
 }
 
-/* Hide sidebar on phone */
-@media (max-width: 900px) {
+/* Hide sidebar on phone -- got help from ChatGPT, had to fix a lot by hand*/
+@media (max-width: 800px) {
+  body {
+    margin: 0;
+  }
+
   .sidebar {
     display: none;
   }
@@ -43,13 +56,10 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 20px;
     background: #767676;
     position: sticky;
-    top: 0;
     z-index: 10;
-    width: 100%;
-    left: 0;
   }
 
   .nav-mobile {
@@ -68,20 +78,23 @@ section {
   }
 }
 
+
+/* Gallery layout */ 
 .artlayout {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 2rem;
+    column-count: 3;
+    column-gap: 20px;
 }
 
 .artlayout img {
     width: 100%;
     object-fit: cover;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    cursor: pointer;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     .artlayout {
-        grid-template-columns: 1fr;
+      column-count: 2;
     }
 }
