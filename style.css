@@ -1,45 +1,91 @@
-
 /* Constant */
+@font-face {
+  font-family: "oxygen";
+  src: url(fonts/OxygenMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url(fonts/RobotoMono-VariableFont_wght.ttf);
+}
+
 :root {
-  --background-color: black;
-  --accent: green;
-  --accent-two: lightgreen;
+  --background-color: rgb(47, 47, 47);
+  --bg-color-2: rgb(38, 38, 38);
+  --accent: #bfdb85;
+  --accent-two: #6cc17d;
   --main-text: white;
-  --secondary-text: grey;
+  --secondary-text: rgb(199, 199, 199);
 }
 
 body {
   margin: 0;
+  background-color: var(--bg-color-2);
+}
+
+/* Desktop Display */
+
+#contacts {
+  padding: 20px;
 }
 
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
-  width: 25vh;
+  width: 200px;
   height: 100vh;
   padding: 2rem;
-  background: #848484;
+  background: var(--bg-color-2);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  border-right: 2px solid var(--background-color);
+  align-items: center;
+}
+
+.logo img {
+  height: 200px;
+  margin-bottom: 0;
+  align-self: center;
+  justify-self: center;
+}
+
+.sub-logo {
+  font-family: "oxygen";
+  display: block;
+  color: var(--secondary-text);
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 35px;
 }
 
 .nav-desktop a {
+  font-family: "roboto";
   display: block;
-  margin: 1rem 0;
+  margin: .8em 0;
   text-decoration: none;
-  color: #fff;
+  color: var(--main-text);
+}
+
+.nav-desktop a:hover {
+  color: var(--accent);
+  cursor: pointer;
+  transform: translate(5px);
+  text-decoration: underline;
 }
 
 .content {
-  margin-left: 30vh;
+  margin-left: 250px;
   padding: 1rem;
 }
 
 section {
   min-height: 100vh;
   padding: 0 1rem;
+}
+
+.mobile {
+  display: none;
 }
 
 /* Hide sidebar on phone -- got help from ChatGPT, had to fix a lot by hand*/
@@ -61,16 +107,22 @@ section {
     justify-content: space-between;
     align-items: center;
     Height: 60px;
-    background: #767676;
+    background: var(--background-color);
     position: sticky;
     top: 0;
     z-index: 10;
   }
 
+  .mobile img {
+    display: block;
+    width: 150px;
+    margin-left: 20px
+  }
+
   .nav-mobile {
     display: none;
     flex-direction: column;
-    background: #b48383;
+    background: var(--bg-color-2);
     position:absolute;
     width: 100vw;
     top: 60px;
@@ -79,21 +131,27 @@ section {
   .nav-mobile a {
     padding: 1rem 1rem;
     text-decoration: none;
-    color: #000000;
+    color: var(--main-text);
+    font-family: "roboto";
     display: block;
     cursor: pointer;
   }
 
   .nav-mobile a:hover {
-    background-color: yellow;
+    background-color: var(--accent-two);
   }
 
 }
 
 /* Dropdown */
 .mobile button {
-  background-color: aqua;
+  background-color: var(--background-color);
   cursor: pointer;
+  color: var(--main-text);
+  margin-right: 20px;
+  font-size: 30px;
+  border: none;
+  display: inline-block;
 }
 
 /* Gallery layout */ 
@@ -105,7 +163,7 @@ section {
 #artlayout img {
     width: 100%;
     object-fit: cover;
-    margin-top: 20px;
+    margin-top: 18px;
     margin-bottom: 0px;
     cursor: pointer;
 }
@@ -114,37 +172,87 @@ section {
   filter: brightness(50%);
 }
 
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,.9);
-  z-index: 100;
-  justify-content: center;
-  align-items: center;
+
+@media (max-width: 900px) {
+  #artlayout {
+    column-count: 2;
+    column-gap: 20px;
+  }
 }
 
-.popup span {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+/* Project layout details */
+
+.titles {
+  font-family: "roboto";
+  color: var(--main-text);
   font-size: 40px;
-  color: white;
+  margin-top: 20px;
+}
+
+.desc {
+  font-family: "oxygen";
+  color: var(--main-text);
+  font-size: 14px;
+}
+
+.project {
+  display: flex;
+}
+
+.project img {
   cursor: pointer;
+  width: 100%;
+  margin-top: 7px;
+}
+
+.column2 {
+  flex: 10%;
+  padding: 5px;
+}
+
+.column3 {
+  flex: 33%;
+  padding: 5px;
+}
+
+.outside {
+  color: var(--accent);
+  text-decoration: underline;
+  font-family: "oxygen";
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+/* popup?? */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  background: rgba(0,0,0,.8);
+  height: 100%;
+  width: 100%;
   z-index: 100;
+  display: none;
+}
+
+.popup span { 
+  position: absolute;
+  top: 20px; right: 40px;
+  font-size: 50px;
+  color: var(--main-text);
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 .popup img {
-  position: relative;
-  object-fit: contain;
-  width: 900px;
-  height: auto;
-  max-height: 100vh;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  
+  max-height: 90%;
+  object-fit: cover;
 }
 
 @media (max-width: 800px) {
-    #artlayout {
-      column-count: 2;
-    }
+  .popup img {
+    width: 90%;
+  }
 }

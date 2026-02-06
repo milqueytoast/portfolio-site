@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sara Atefi | Characters</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!--Desktop Nav-->
     <aside class="sidebar">
-        <h1 class="logo">Sara Atefi</h1>
+        <h1 class="logo"><a href="index.html"><img src="images/DESKTOP-LOGO.png"></a></h1>
+        <div class="sub-logo">saramatefi@gmail.com</div>
         <nav class="nav-desktop">
-            <a href="index.html">Work</a>
-            <a href="characters.html">Characters</a>
-            <a>Props</a>
-            <a>Contact</a>
+            <a href="index.html">>Work</a>
+            <a href="characters.html">>Characters</a>
+            <a href="props.html">>Props</a>
+            <a href="contact.html">>Contact</a>
         </nav>
         <div class="socials"></div>
     </aside>
 
     <!--Mobile Nav-->
     <header class="mobile">
-        <div class="brand">Sara Atefi</div>
-        <button id="hamburger" onclick="showNav()"></button>
-        <nav class="nav-mobile hidden">
-            <a>Work</a>
-            <a>Characters</a>
-            <a>Props</a>
-            <a>Contact</a>
+        <div><a><img src="images/MOBILE-LOGO.png"></a></div>
+        <button id="hamburger">&#9776;</button>
+        <nav id="dropdown" class="nav-mobile">
+            <a href="index.html">Work</a>
+            <a href="characters.html">Characters</a>
+            <a href="props.html">Props</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <!--Main Gallery-->
     <main class="content">
-        <section id="conceptcore">
-            
-        </section>
-        
+        <!--Witch Bartender-->
+        <section class="work">
+            <h2 class="titles">Witch Bartender</h2>
+            <p class="desc">A character design project with the goal of making a 3D figure model, a splash illustration, and learning the
+                basics of handpainted texturing.</p>
+            <div class="project">
+                <div class="column2">
+                    <img src="images/WitchBartenderSplash.jpg" alt="">
+                    <img src="images/witchrender3d.png" alt="">
+                </div>
+                <div class="column2">
+                    <img src="images/sara-atefi-bartenderwitchsheet.jpg" alt="">
+                    <img src="images/PortraitFront.jpg" alt="">
+                </div>
+            </div>
+            <h2 class="titles">The Amateur Summoner</h2>
+            <p class="desc">A 3D short animation created in a time crunch from start to finish of about one month. All assets are made by hand, minus a few sounds from FreeSound.</p>
+            <a class="outside">Link to watch</a>
+            <div class="project">
+                <div class="column3">
+                    <img src="images/0110.png" alt="">
+                </div>
+                <div class="column3">
+                    <img src="images/demon-screengrab.jpg" alt="">
+                </div>
+                <div class="column3">
+                    <img src="images/0070.png" alt="">
+                </div>
+            </div>
+    </main>
+
+    <div class="popup">
+        <span>&times;</span>
+        <img src="" alt="">
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
